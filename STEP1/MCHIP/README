@@ -1,0 +1,47 @@
+###################################################################################
+# CHIP ANAYSIS PIPLEINE #
+
+###################################################################################
+# FILES #
+
+  Union_Genes.CDS.bed                    : CDS intervals corresponding to the 84 CHIP genes: GNB1,CSF3R,MPL,JAK1,NRAS,SETDB1,GATA3,PTEN,SMC3,WT1,NXF1,SF1,EED,ATM,KMT2A,CBL,ETV6,ETNK1,KRAS,KMT2D,PRPF40B,PTPN11,FLT3,PDS5B,YLPM1,IDH2,CREBBP,SRCAP,CTCF,PRPF8,TP53,NF1,SUZ12,IKZF3,STAT3,PPM1D,GNA13,SRSF2,SETBP1,CALR,JAK3,CEBPA,U2AF2,DNMT3A,ASXL2,SF3B1,IDH1,IKZF2,ASXL1,GNAS,RUNX1,U2AF1,SF3A1,EP300,MYD88,SETD2,CBLB,GATA2,STAG1,KIT,TET2,CSF1R,NPM1,ZNF318,PHIP,PDSS2,IKZF1,CUX1,LUC7L2,BRAF,EZH2,RAD21,JAK2,PIGA,ZRSR2,BCOR,KDM6A,GATA1,SMC1A,ZBTB33,STAG2,BCORL1,PHF6,BRCC3
+  1000g_pon.hg38_Union_Genes.vcf.gz      : panel of normals
+  af-only-gnomad.hg38_Union_Genes.vcf.gz : gnomAD AF's
+
+  download.sh                            : download/install script
+  chip_mutect2.sh                        : mutect2 calls
+
+  NEW_UnfilteredVCF_Files_ManualAlternative.zip : CHIP analysis (Sergiu Pasaca)
+
+###################################################################################
+# INSTALL #
+
+mkdir $WORK_DIR  ; cd  $WORK_DIR 
+
+wget ftp://ftp.ccb.jhu.edu//pub/dpuiu/Homo_sapiens_mito/CHIP/download.sh
+. ./download.sh
+
+###################################################################################
+# RUN MUTECT2 # 
+
+mkdir -p $OUT_DIR
+
+#run chip_mutect2.sh on each BAM/CRAM alignment file
+IN=$IN_DIR/CRAM_file ; OUT=$OUT_DIR/prefix ; ./chip_mutect2.sh $IN $OUT
+
+###################################################################################
+# MERGE VCF OUTPUT FILES # 
+
+# add SM=sample label to each $OUT_DIR/*.filt.vcf.gz SNV
+# merge $OUT_DIR/*.filt.vcf.gz files  =>  mutect2.filter.1.vcf
+
+###################################################################################
+# RUN CHIP ANALYSYS #
+
+./Manual_START_UKB_Filter.sh
+
+###################################################################################
+# CDS REGIONS #
+
+  .                    #regions   min    q1     q2     q3     max        mean       sum            
+  CDS                  1520       2      93     127    172    4367       184.92     281073     
