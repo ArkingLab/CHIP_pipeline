@@ -1,6 +1,6 @@
-## CHIP pipeline 
+# CHIP pipeline 
 
-## This pipeline has 3 steps
+ This pipeline has 3 steps
 
 ### STEP1
 
