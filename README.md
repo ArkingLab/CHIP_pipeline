@@ -5,3 +5,4 @@
 ### STEP1
 
 Step1 is running Mutect2 for CHIP genes, to call from CHIP regions
+ -- For this step, first run the download script to download all files, then run mutect2.sh script to call CHIP variants
