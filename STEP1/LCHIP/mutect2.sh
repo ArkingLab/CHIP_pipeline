@@ -7,13 +7,13 @@ set -ex
 IN=$1
 OUT_PREFIX=$2
 
-DIR="."	# must be set to the location of the downloaded cram/vcf file
+DIR="."	# must be set to the location of the downloaded CHIP git repo
 
 ref_chr=$DIR/GRCh38_full_analysis_set_plus_decoy_hla.fa
 intervals=$DIR/L-CHIP.CDS.merge.bed
-ref_pon=$DIR/1000g_pon.hg38_Union_Genes.vcf.gz
-ref_germ=$DIR/af-only-gnomad.hg38_Union_Genes.vcf.gz
-tmp_dir=~/tmp
+ref_pon=$DIR/1000g_pon.hg38.vcf.gz
+ref_germ=$DIR/af-only-gnomad.hg38.vcf.gz
+tmp_dir=$DIR/tmp
 
 test -s ${ref_chr}
 test -s ${IN}

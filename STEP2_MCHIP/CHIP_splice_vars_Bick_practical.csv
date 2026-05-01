@@ -1,0 +1,36 @@
+Gene,Reported_mutation,Accession
+BCOR,Frameshift/nonsense/splice-site,NM_001123385
+BCORL1,Frameshift/nonsense/splice-site,NM_021946
+BRCC3,Frameshift/nonsense/splice-site,NM_024332
+CEBPA,Frameshift/nonsense/splice-site,NM_004364
+CREBBP,Frameshift/nonsense/splice-site,NM_004380
+DNMT3A,Frameshift/nonsense/splice-site,NM_022552
+EED,Frameshift/nonsense/splice-site,NM_003797
+EP300,Frameshift/nonsense/splice_site,NM_001429
+ETV6,Frameshift/nonsense/splice-site,NM_001987
+EZH2,Frameshift/nonsense/splice-site,NM_001203247
+GATA1,Frameshift/nonsense/splice-site,NM_002049
+GATA2,Frameshift/nonsense/splice-site,NM_001145661
+KDM6A,Frameshift/nonsense/splice-site,NM_021140
+LUC7L2,Frameshift/nonsense/splice-site,NM_016019
+PDS5B,Frameshift/nonsense/splice-site,NM_015032
+PHF6,Frameshift/nonsense/splice-site,NM_001015877
+PHIP,Frameshift/nonsense/splice-site,NM_017934
+PRPF40B,Frameshift/nonsense/splice-site,NM_001031698
+PTEN,Frameshift/nonsense/splice-site,NM_000314
+RAD21,Frameshift/nonsense/splice-site,NM_006265
+RUNX1,Frameshift/nonsense/splice-site,NM_001001890
+SF1,Frameshift/nonsense/splice-site,NM_004630
+SF3A1,Frameshift/nonsense/splice-site,NM_005877
+STAG1,Frameshift/nonsense/splice-site,NM_005862
+STAG2,Frameshift/nonsense/splice-site,NM_006603
+TET2,Frameshift/nonsense/splice-site,NM_001127208
+TP53,Frameshift/nonsense/splice-site,NM_001126112
+WT1,Frameshift/nonsense/splice-site,NM_024426
+SRCAP,Frameshift/nonsense/splicing,NM_006662
+YLPM1,Frameshift/nonsense/splicing,NM_019589
+ZNF318,Frameshift/nonsense/splicing,NM_014345
+ZBTB33,Frameshift/nonsense/splicing and some missense,NM_006777
+NXF1,Frameshift/nonsense/splicing,NM_006362
+ATM,"Frameshift, nonsense, splice site, AAS R337H, R2832H/C, N2875S, I2888T, R3008C/H",NM_000051
+PIGA,Frameshift/nonsense/splicing and manual missense,NM_002641
