@@ -6,7 +6,7 @@ rm(list=ls())
 
 fin_df <- read.delim("Putative_SemiFilteredDF.tsv", sep = "\t")
 
-fin_df <- fin_df[!duplicated(fin_df$JoiningVar),]
+#fin_df <- fin_df[!duplicated(fin_df$JoiningVar),]
 
 # Further gene hits -------------------------------------------------------
 

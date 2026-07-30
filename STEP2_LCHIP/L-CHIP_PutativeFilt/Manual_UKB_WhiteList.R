@@ -148,7 +148,7 @@ fin_df <- fin_df[!is.na(fin_df$Accession),]
 
 fin_df$JoiningVar <- paste(fin_df$SampID, fin_df$Chr, fin_df$Start, fin_df$End, fin_df$Ref, fin_df$Alt, sep = ":")
 
-fin_df <- fin_df[!duplicated(fin_df$JoiningVar),]
+#fin_df <- fin_df[!duplicated(fin_df$JoiningVar),]
 
 
 print(paste0("There are ", sum(duplicated(fin_df$JoiningVar)), " duplicates, remember duplicates are not automatically removed here."))

@@ -6,7 +6,7 @@ rm(list=ls())
 
 fin_df <- read.delim("SemiFilteredDF.tsv", sep = "\t")
 
-fin_df <- fin_df[!duplicated(fin_df$JoiningVar),]
+#fin_df <- fin_df[!duplicated(fin_df$JoiningVar),]
 table(read.csv("NODEL_ManualCheck.csv")$TorF)
 fin_df$whitelist <- ifelse(fin_df$transcriptOI %in% (read.csv("NODEL_ManualCheck.csv")%>%
                                                          filter(TorF)%>%

@@ -43,7 +43,7 @@ table(fin_df$X.CHROM)
 fin_df$VAF_adj <- ifelse(fin_df$X.CHROM == "X" & fin_df$sex == "men", fin_df$newVAF/2, fin_df$newVAF)
 table(fin_df$X.CHROM[fin_df$VAF_adj != fin_df$newVAF])
 
-fin_df <- fin_df[!duplicated(fin_df$JoiningVar),]
+#fin_df <- fin_df[!duplicated(fin_df$JoiningVar),]
 
 fin_df <- fin_df[!(fin_df$VAF_adj < 2),]
 
@@ -58,7 +58,7 @@ MisPath <- read.csv("LCHIPPATH_CHIP_missense_vars_Bick_practical.csv")
 
 fin_df$RepPathVar <- paste0(fin_df$Gene.refGene, " ", fin_df$NonsynOI) %in% paste0(MisPath$Gene, " p.", MisPath$AAChange)
 
-TNOP <- 12519#Set this to the total number of individuals assessed
+TNOP <- 12345 #Set this to the total number of individuals assessed
 fin_df$PTF <- fin_df$FullVar %in% as.character(TFDFTR$Var1[(TFDFTR$Freq/TNOP*100)>1])
 
 fin_df <- fin_df[!((fin_df$RepPathVar == FALSE)&fin_df$PTF),]
@@ -72,6 +72,8 @@ fin_df <- fin_df[!((fin_df$VAF_adj>=35)&(fin_df$RepPathVar==FALSE)),]
 #This section is not applied because the VAF_adj >= 35% was already applied; it is more of a check
 fin_df$BinomTestGermlineHet <- NA
 fin_df$BinomTestGermlineHom <- NA
+
+fin_df = fin_df %>% filter(!is.na(AltDP))
 
 for(i in 1:length(fin_df$BinomTestGermlineHet)){
 

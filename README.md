@@ -71,7 +71,7 @@ For putativeFilt, the script needs sex information for each sample, where column
 ##### Merger
 
 - Copy the two finalfiltered.csv file generated above and the idsex file over.
-- Change the `TNOP` in `Rscript Manual_UKB_FinalStretch.R` to sample size.
+- Change the `TNOP` in `Rscript MergerOfFinalDF.R` to sample size.
 - Run: `Rscript MergerOfFinalDF.R`
 - `FinalFiltered.tsv` is the final output to be used in STEP3.
 
@@ -82,7 +82,9 @@ For putativeFilt, the script needs sex information for each sample, where column
 cp ../STEP1/mchip_sample/mutect2.mchip.filter.1.vcf ./
 tail -n +32 mutect2.mchip.filter.1.vcf > mutect2.mchip.filternh.1.vcf
 mv mutect2.mchip.filternh.1.vcf Input.vcf
-(echo -e "X.CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tSAMPLE"; cat Input.vcf) > Input.vcf
+(echo -e "X.CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tSAMPLE"; cat Input.vcf) > Input1.vcf
+rm Input.vcf
+mv Input1.vcf Input.vcf
 ```
 - Run: `. ./Manual_START_UKB_Filter.sh`
 - Then: `Rscript Manual_UKB_FinalStretch.R`

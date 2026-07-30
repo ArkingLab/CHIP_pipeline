@@ -464,7 +464,7 @@ fin_df$SampID <- str_extract(fin_df$INFO, "SM=[0-9]*")%>%
 fin_df$JoiningVar <- paste(fin_df$SampID, fin_df$Chr, fin_df$Start, fin_df$End, fin_df$Ref, fin_df$Alt, sep = ":")
 si_df <- fin_df[fin_df$JoiningVar %in% fin_df$JoiningVar[duplicated(fin_df$JoiningVar)],]
 
-fin_df <- fin_df[!duplicated(fin_df$JoiningVar),]
+#fin_df <- fin_df[!duplicated(fin_df$JoiningVar),]
 
 print(paste0("There are ", sum(duplicated(fin_df$JoiningVar)), " duplicates, remember duplicates are not automatically removed here."))
 
